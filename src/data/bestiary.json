@@ -1,0 +1,374 @@
+{
+  "antagonists": [
+    {
+      "name": "Average Human",
+      "category": "Non-Supernatural",
+      "type": "Mob",
+      "flavor": "Farmers, townspeople, journalists, merchants, politicians caught up in the war. Hard to tell a scared innocent from a shrewd manipulator at first glance.",
+      "initiative": 4, "armor": "None",
+      "brawn": 3, "smarts": 3, "guts": 3,
+      "weapons": [{ "name": "Unarmed/Improvised", "damage": 0, "notes": "Generally none. May have a Knife, Club, Staff, or Pistol if appropriate." }],
+      "skills": [
+        { "name": "Melee", "rank": 1 },
+        { "name": "Communication", "rank": 2 },
+        { "name": "Specialty", "rank": 3, "notes": "May have a third skill related to their profession or main experience." }
+      ],
+      "weakness": "Generally fear for their lives and do what anyone who threatens them says.",
+      "reward": "None"
+    },
+    {
+      "name": "Commando",
+      "category": "Non-Supernatural",
+      "type": "Solo",
+      "flavor": "A soldier trained near the peak of human ability. No longer surprised by ordinary deaths of war, and familiar with the supernatural horrors of the battlefield too. Pragmatic, sometimes swayed by realities on the ground.",
+      "initiative": 7, "armor": 4,
+      "brawn": 5, "smarts": 3, "guts": 4,
+      "weapons": [
+        { "name": "Knife", "damage": null },
+        { "name": "Machine Gun", "damage": null, "notes": "See core Machine Gun stats: 2 damage, Critical (3), Spray (2)" }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 3 },
+        { "name": "Stealth", "rank": 3 },
+        { "name": "Ranged", "rank": 3 }
+      ],
+      "weakness": "None",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Common Soldier",
+      "category": "Non-Supernatural",
+      "type": "Mob",
+      "flavor": "An infantry soldier from any army, likely a raw recruit but already weary with fighting. Loyalties can be swayed; sometimes found fighting for AWOL commanders, warlords, or even monsters.",
+      "initiative": 6, "armor": "None",
+      "brawn": 2, "smarts": 2, "guts": 2,
+      "weapons": [{ "name": "Rifle and Bayonet", "damage": null }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Ranged", "rank": 2 },
+        { "name": "Specialty", "rank": 3, "notes": "Has a third skill related to their military position or training." }
+      ],
+      "weakness": "None",
+      "reward": "Draw 1 card for the Unit per group of Common Soldiers."
+    },
+    {
+      "name": "Hallow Sister",
+      "aliases": ["Gallow Sister", "Nightingale"],
+      "category": "Non-Supernatural",
+      "type": "Solo",
+      "flavor": "Nurses, nuns, or volunteers who took to helping the wounded. Appear in groups of five or less after battles. If attacked, they withdraw with supernatural speed, ending combat after one round.",
+      "initiative": 10, "armor": "None",
+      "brawn": 2, "smarts": 4, "guts": 6,
+      "weapons": [{ "name": "None", "damage": 0 }],
+      "skills": [
+        { "name": "Stealth", "rank": 1 },
+        { "name": "Knowledge", "rank": 2 },
+        { "name": "Healing Arts", "rank": 3, "notes": "Targets any attribute; success over target's Defense heals 1 rank in it. +1 healing (2) augment." },
+        { "name": "Triage (always active)", "rank": null, "notes": "Communication or Investigation roll to 'read' whether a patient is worth saving. Deems some unworthy: as likely to mercy-kill as to leave them." }
+      ],
+      "weakness": "None",
+      "reward": "None"
+    },
+    {
+      "name": "Officer",
+      "category": "Non-Supernatural",
+      "type": "Solo",
+      "flavor": "An experienced soldier untouched by the Others, given special assignments: spy missions, sniper posts, scouting, sapping, disinformation. Loyal, demands POW treatment if captured, unlikely to defect.",
+      "initiative": 8, "armor": 3,
+      "brawn": 3, "smarts": 3, "guts": 3,
+      "weapons": [{ "name": "Pistol", "damage": null }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Investigation", "rank": 3 },
+        { "name": "Ranged", "rank": 2 },
+        { "name": "Specialty", "rank": 2, "notes": "May have a fourth skill related to military position or training." }
+      ],
+      "weakness": "None",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Shell Shocked Soldier",
+      "category": "Non-Supernatural",
+      "type": "Mob",
+      "flavor": "The pressure of war caused a break with reality. Primary motivation is escape — will try to exit anywhere, even moving vehicles, and fight anyone who restrains them.",
+      "initiative": 9, "armor": "None",
+      "brawn": 4, "smarts": 1, "guts": 2,
+      "weapons": [{ "name": "Knife or Pistol", "damage": null, "notes": "Possibly a Rifle and Bayonet." }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Ranged", "rank": 2 },
+        { "name": "Communication", "rank": 4, "notes": "Either can't stop talking or body language conveys clear distress; hard to make sense of what they're saying." }
+      ],
+      "weakness": "A familiar soldier can attempt Communication rolls to end the episode (both roll, compare successes; personal acquaintance grants 1 automatic success; 3 consecutive successes needed). Alternately, an Athletics Challenge TN 4 restrains them.",
+      "reward": "None"
+    },
+    {
+      "name": "War Dog",
+      "category": "Non-Supernatural",
+      "type": "Mob",
+      "flavor": "Dogs of war: vermin killers, camp guards, explosive-detection, all-purpose detection systems. May be found as feral packs.",
+      "initiative": 6, "armor": "None",
+      "brawn": 3, "smarts": 2, "guts": 2,
+      "weapons": [{ "name": "Bite", "damage": 1 }],
+      "skills": [
+        { "name": "Athletics", "rank": 2 },
+        { "name": "Melee", "rank": 3 },
+        { "name": "Investigation", "rank": 3 }
+      ],
+      "weakness": "None",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Cackling Horror",
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "Lives to experience and cause pain, carnage, misery, conflict. Summoned by casters wanting a powerful ally — cares about nothing but the chaos, will subvert its summoner's plans to ensure destruction.",
+      "initiative": 6, "armor": 4,
+      "brawn": 3, "smarts": 5, "guts": 4,
+      "weapons": [{ "name": "Claws", "damage": 1, "abilities": "+1 damage (1), Assault (2), Flurry (3)" }],
+      "skills": [
+        { "name": "Stealth", "rank": 2 },
+        { "name": "Communication", "rank": 4 },
+        { "name": "Knowledge", "rank": 3 },
+        { "name": "Investigation", "rank": 3 },
+        { "name": "Elemental Rituals", "rank": 3, "notes": "Fire, Mental Anguish" },
+        { "name": "Chilling Laughter (Guts)", "rank": 4, "notes": "Targets Guts, hits ALL enemies engaged in combat against it; all victims suffer Stun." }
+      ],
+      "weakness": "None",
+      "reward": "Everyone in the combat may either draw 1 card or heal 1 point of Corruption."
+    },
+    {
+      "name": "Corpse Feeder",
+      "aliases": ["Ghoul", "Leichenfresser"],
+      "category": "Supernatural",
+      "type": "Mob",
+      "flavor": "A humanoid carrion creature that stalks the outskirts of battlefields looking for the fallen or the injured.",
+      "initiative": 7, "armor": "None",
+      "brawn": 3, "smarts": 2, "guts": 2,
+      "weapons": [
+        { "name": "Claws", "damage": 1 },
+        { "name": "Bite", "damage": 2, "abilities": "Assault (2)" }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Stealth", "rank": 2 }
+      ],
+      "weakness": "A bright sustained light causes it to move into the nearest darkness, though it won't leave combat unless already injured. Light deals no damage.",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Cultists",
+      "category": "Supernatural",
+      "type": "Mob",
+      "flavor": "Humans who committed to the Others' power, learned some Whispers, hungry for more. Usually led by a more powerful figure (often a Veil Priest); used as expendable front-line forces, willing to die for their assignments. Cannot usually be reasoned with.",
+      "initiative": 8, "armor": "None",
+      "brawn": 2, "smarts": 4, "guts": 2,
+      "weapons": [{ "name": "Pistol and Knife", "damage": null }],
+      "skills": [
+        { "name": "Knowledge", "rank": 2 },
+        { "name": "Ranged", "rank": 2 },
+        { "name": "Elemental Rituals", "rank": 2, "notes": "Fire (or another Path, usually Old Ways or Rotten Tricks)." }
+      ],
+      "weakness": "None",
+      "reward": "None"
+    },
+    {
+      "name": "The Disfigured",
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "Demons who were once soldiers that lost their humanity. Infested with disease and vermin, missing limbs, marked by war wounds. Love hooks, barbed wire, mutilation, but skilled at deception and infiltrating regular soldier ranks. This is what a PC becomes at 5+ Corruption.",
+      "initiative": 8, "armor": "None",
+      "brawn": 4, "smarts": 3, "guts": 3,
+      "weapons": [{ "name": "Pistol", "damage": null }],
+      "skills": [
+        { "name": "Athletics", "rank": 1 },
+        { "name": "Melee", "rank": 3 },
+        { "name": "Stealth", "rank": 1 },
+        { "name": "Ranged", "rank": 2 },
+        { "name": "Integrated Deception (Smarts)", "rank": 3, "notes": "In favorable conditions (darkness, crowds, rain/fog/smoke) can blend in as a soldier. Successes on the roll = TN to spot them." },
+        { "name": "Jagged Implement (Guts)", "rank": 2, "notes": "Success vs TN (= number of enemies faced) pulls out a new melee weapon dealing 2 damage." },
+        { "name": "Vile Host (always active)", "rank": null, "notes": "Anyone who grabs/grapples a Disfigured risks Corruption; can also inflict a Corruption chance via the Jagged Implement." }
+      ],
+      "weakness": "None",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Nightfiend",
+      "aliases": ["Sobek's Get"],
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "A crocodilian-headed nocturnal predator, ever hungry, drawn to light/noise/battle. Both sides sometimes agree ceasefires until morning when signs of Nightfiends appear. Hunts alone.",
+      "initiative": 9, "armor": 3,
+      "brawn": 6, "smarts": 2, "guts": 3,
+      "weapons": [
+        { "name": "Bite", "damage": 2, "abilities": "Critical (3)" },
+        { "name": "Claws", "damage": 1, "abilities": "+1 damage (1), Flurry (3)" }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 3 },
+        { "name": "Stealth", "rank": 4 }
+      ],
+      "weakness": "Bright lights (gunfire, artillery at night) draw its attention.",
+      "reward": "None listed"
+    },
+    {
+      "name": "Rot Breeder",
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "When one of the Disfigured survives long enough and shows a capacity to spread corruption, the dark powers nurture it into a Rot Breeder — an organizer for mass conversion of people into monsters, not just a disease vector. Where Hive Rats or the Disfigured are common, a Rot Breeder may be directing operations nearby.",
+      "initiative": 6, "armor": "None",
+      "brawn": 4, "smarts": 5, "guts": 4,
+      "weapons": [
+        { "name": "Human melee weapon", "damage": null, "notes": "May pick up and use one, but usually does not." },
+        { "name": "Tongue-Tentacle", "damage": 1, "damageType": "Guts", "abilities": "+1 damage (2), Spray (2)" }
+      ],
+      "skills": [
+        { "name": "Athletics", "rank": 1 },
+        { "name": "Melee", "rank": 3 },
+        { "name": "Ranged", "rank": 3 },
+        { "name": "Rotten Tricks", "rank": 4, "notes": "Poison, Strange Wind, Swamp Gas" },
+        { "name": "Vile Host (always active)", "rank": null, "notes": "Anyone who grabs or grapples a Rot Breeder has a chance of Corruption." }
+      ],
+      "weakness": "Not fully recorded in extracted text — verify against book.",
+      "reward": "Not fully recorded in extracted text — verify against book."
+    },
+    {
+      "name": "Skin Thief",
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "A shuffling monster of mismatched parts, feeds on flesh but peels skin from victims first to keep as trophies, air-dried and displayed. An ambush predator that disguises itself as a corpse or living human.",
+      "initiative": null, "armor": "None",
+      "brawn": 4, "smarts": 3, "guts": 2,
+      "weapons": [{ "name": "Fists", "damage": 2, "abilities": "+1 damage (2)" }],
+      "skills": [
+        { "name": "Athletics", "rank": 2 },
+        { "name": "Melee", "rank": 3 },
+        { "name": "Wear Skin (Smarts)", "rank": 4, "notes": "Disguises as a person by wearing dismembered parts. Visual only — cannot speak, learns nothing from victims. Successes on the roll = TN to spot the disguise." }
+      ],
+      "weakness": "If not desperate for a meal, may be persuaded to leave if its trophy collection is threatened.",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Slugmule",
+      "category": "Supernatural",
+      "type": "Solo",
+      "flavor": "A cross between a pig and a donkey, stinky and none-too-bright but strong with amazing endurance. Blindfolded, it's docile and rideable anywhere, even into monster dens. Uncovered eyes = total panic, tossing rider and gear.",
+      "initiative": 3, "armor": "None",
+      "brawn": 4, "smarts": "1 (3 while blindfolded)", "guts": 3,
+      "weapons": [
+        { "name": "Bite", "damage": 1 },
+        { "name": "Kick or Stomp", "damage": 1, "abilities": "+1 damage (2)" }
+      ],
+      "skills": [
+        { "name": "Athletics", "rank": 4 },
+        { "name": "Melee", "rank": 2 }
+      ],
+      "weakness": "Completely tame and obedient while blindfolded. Attacks everything in range and tries to flee when not.",
+      "reward": "None"
+    },
+    {
+      "name": "Trench Gremlin",
+      "category": "Supernatural",
+      "type": "Mob",
+      "flavor": "Foul little creatures ~14 inches tall, intensely curious, covet anything humans value — weapons, food, money, alcohol, entertainment, sweets. Cruel but not overtly malicious, just craves stimulation. Monkey-like, bipedal, agile; avoids stand-up fights.",
+      "initiative": "K", "armor": "None",
+      "brawn": 1, "smarts": 4, "guts": 2,
+      "weapons": [{ "name": "Claws", "damage": 1 }],
+      "skills": [
+        { "name": "Melee", "rank": 1 },
+        { "name": "Communication", "rank": 1 },
+        { "name": "Mechanics", "rank": 4 },
+        { "name": "Investigation", "rank": 2 },
+        { "name": "Ranged", "rank": 1 },
+        { "name": "Transport", "rank": 2 },
+        { "name": "Quick Escape (Smarts)", "rank": 4, "notes": "Success vs TN (= number of enemies faced) lets it leave combat; can flee/re-enter at any time." }
+      ],
+      "weakness": "Trapping it in an inescapable box/cage reduces Smarts to 1; its only action becomes claw attacks.",
+      "reward": "Draw 1 card for the Unit for every 3 Gremlins killed or chased away."
+    },
+    {
+      "name": "Inquisitor",
+      "category": "Supernatural",
+      "adventure": "The Lamps Are Going Out",
+      "type": "Solo",
+      "flavor": "An enemy soldier who succumbed to the Night Master's will, patrols for sacrifices. Gas mask, hooded oil cloth covered in crude white/black symbols. Carries a torch dripping dark crimson, burning low smoky purple flame.",
+      "initiative": 4, "armor": "None",
+      "brawn": 2, "smarts": 4, "guts": 2,
+      "weapons": [
+        { "name": "Fist", "damage": 1 },
+        { "name": "Torch Club", "damage": 1, "notes": "Catches victim on fire — ongoing 1 damage/round on victim's turn until an action is spent to extinguish." }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 3 },
+        { "name": "Elemental Rituals", "rank": 2, "notes": "Fire" }
+      ],
+      "weakness": "Blind, uses echolocation. Staying stiff and quiet essentially makes you invisible to them.",
+      "reward": "None"
+    },
+    {
+      "name": "High Inquisitor",
+      "category": "Supernatural",
+      "adventure": "The Lamps Are Going Out",
+      "type": "Solo",
+      "flavor": "An Inquisitor who received the Night Master's blessing — larger, hood covered entirely in white paste, carries a staff that smolders and glows purple.",
+      "initiative": 8, "armor": 2,
+      "brawn": 4, "smarts": 2, "guts": 3,
+      "weapons": [
+        { "name": "Fist", "damage": 2 },
+        { "name": "Torch Staff", "damage": 2, "notes": "Catches the ENTIRE Unit on fire — ongoing 1 damage/round on each victim's turn until extinguished." }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 3 },
+        { "name": "Investigation", "rank": 2 },
+        { "name": "Elemental Rituals", "rank": 3, "notes": "Fire" }
+      ],
+      "weakness": "Blind, uses improved echolocation — doesn't grant invisibility to stiff/silent characters, but is sensitive to loud noises: gunfire at melee range does 1 damage to its Smarts.",
+      "reward": "Draw 1 card."
+    },
+    {
+      "name": "Minister",
+      "category": "Supernatural",
+      "adventure": "The Lamps Are Going Out",
+      "type": "Solo",
+      "flavor": "The former village minister, fully succumbed and blessed by the Night Master. Older, poor health, roughly-made vestments covered in white paste, smoked glasses hiding his eyes.",
+      "initiative": 10, "armor": 2,
+      "brawn": 2, "smarts": 6, "guts": 5,
+      "weapons": [{ "name": "Ceremonial Knife", "damage": 2, "abilities": "Flurry (2)" }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Communication", "rank": 3 },
+        { "name": "Elemental Rituals", "rank": 4, "notes": "Fire" }
+      ],
+      "weakness": "None",
+      "reward": "Draw cards equal to half the number of players, shared by whoever lands the killing blow."
+    },
+    {
+      "name": "The Night Master",
+      "category": "Supernatural",
+      "adventure": "The Lamps Are Going Out",
+      "type": "Solo",
+      "flavor": "A giant bat-ape hybrid, person-sized, clawed hands with 4-foot spines forming wing membranes. Dark hair, ape-like body, oversized flat nose, heavy brow, huge ears, a too-wide mouth full of teeth.",
+      "initiative": "10 (5 in phase 2)", "armor": 3,
+      "brawn": "6 (6 in phase 2)", "smarts": 2, "guts": 4,
+      "weapons": [
+        { "name": "Claws", "damage": 2 },
+        { "name": "Bite", "damage": 1, "abilities": "Stun (2)" }
+      ],
+      "skills": [
+        { "name": "Melee", "rank": 3 },
+        { "name": "Investigation", "rank": 4 },
+        { "name": "Diving Attack (must be Flying)", "rank": null, "notes": "Attacks twice while flying — 2 claws, or 1 bite + 1 claw — swooping close then returning to air." },
+        { "name": "Wing Point (must be on Ground)", "rank": 2, "notes": "Wing swipe attacking two nearby targets: 1 damage, pushes target out of melee range." },
+        { "name": "Shriek (Guts)", "rank": 3, "notes": "Ranged attack targeting Smarts, deals 1 damage." }
+      ],
+      "weakness": "Targeting its wings for any damage, or its Brawn falling below 4, grounds it (can no longer fly). It falls damaged but not defeated, and immediately makes a free Shriek attack (not an action). Use the parenthetical Initiative/Brawn for phase 2 — may appear to 'heal.'",
+      "reward": "Draw cards equal to half the number of players, shared by whoever lands the killing blow."
+    }
+  ],
+  "notes": [
+    "Rot Breeder's weakness/reward text was cut off mid-extraction in the source PDF pull — worth double-checking pages ~79-80 of the book directly before publishing.",
+    "Skin Thief's Initiative Value wasn't captured cleanly in extraction — verify against the book.",
+    "Pip-style skill ratings (●●●○○) were converted to a plain integer 'rank' out of 5 possible boxes.",
+    "Weapon damage/ability fields left as 'null' where the source text was ambiguous after extraction — spot-check against the PDF before treating as final."
+  ]
+}
