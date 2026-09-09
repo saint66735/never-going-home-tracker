@@ -364,7 +364,85 @@
       "weakness": "Targeting its wings for any damage, or its Brawn falling below 4, grounds it (can no longer fly). It falls damaged but not defeated, and immediately makes a free Shriek attack (not an action). Use the parenthetical Initiative/Brawn for phase 2 — may appear to 'heal.'",
       "reward": "Draw cards equal to half the number of players, shared by whoever lands the killing blow."
     }
+    ,
+    {
+      "name": "Order of Camlann Initiate",
+      "category": "Non-Supernatural",
+      "adventure": "The Sword Quest",
+      "type": "Solo",
+      "flavor": "Wears normal, loose-fitting clothing with no set uniform, but each carries a necklace with a copper bit depicting a caged dragon.",
+      "initiative": 6, "armor": "None",
+      "brawn": 3, "smarts": 2, "guts": 4,
+      "weapons": [{ "name": "Pistols and Knives", "damage": null }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Knowledge", "rank": 3 },
+        { "name": "Ranged", "rank": 2 }
+      ],
+      "weakness": "None",
+      "reward": "Draw a card for every group of Initiates defeated. Killing just one, or letting German soldiers kill one, offers no reward."
+    },
+    {
+      "name": "Order of Camlann Knight",
+      "category": "Non-Supernatural",
+      "adventure": "The Sword Quest",
+      "type": "Solo",
+      "flavor": "Wears black military uniforms with no rank insignia, only the order's caged-dragon symbol. No adornment or decoration — a testament to their discipline.",
+      "initiative": 4, "armor": 2,
+      "brawn": 3, "smarts": 3, "guts": 4,
+      "weapons": [{ "name": "Rifles and Swords", "damage": null }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Knowledge", "rank": 2 },
+        { "name": "Ranged", "rank": 3 },
+        { "name": "Heretic Sense (Smarts)", "rank": 2, "notes": "A preternatural sense for the location of casters; may attempt to find users within 100 feet (30 m)." },
+        { "name": "Final Sacrifice (Guts)", "rank": 1, "notes": "May sacrifice themselves, rigging explosives into their uniform: dies, deals 2 Brawn damage to everyone within a 10-foot (3 m) radius including allies, regardless of armor. Victims may roll Athletics TN 2 to reduce damage to 1." }
+      ],
+      "weakness": "None",
+      "reward": "Draw 2 cards, pick 1 to keep, discard the other."
+    },
+    {
+      "name": "Nimue",
+      "category": "Supernatural",
+      "adventure": "The Sword Quest",
+      "type": "Solo",
+      "flavor": "A woman in comfortable traveling clothes and a heavy overcoat, physically unremarkable except for a weirdly stooped posture, as if constantly bothered by an old injury.",
+      "initiative": 8, "armor": "None",
+      "brawn": 2, "smarts": 5, "guts": 5,
+      "weapons": [{ "name": "Pistol", "damage": null }],
+      "skills": [
+        { "name": "Ranged", "rank": 3 },
+        { "name": "Elemental Rituals", "rank": 2, "notes": "Water, Mental Anguish" },
+        { "name": "Healing Words", "rank": 2, "notes": "Mind Rest, Spirit Charge" }
+      ],
+      "weakness": "Must draw for Corruption for every Whisper she casts — takes 1 Guts damage for every point of Corruption drawn.",
+      "reward": "Draw 2 cards; choose one to keep, give one to another member of the Unit."
+    },
+    {
+      "name": "Merlyn",
+      "category": "Supernatural",
+      "adventure": "The Sword Quest",
+      "type": "Solo",
+      "flavor": "Definitely humanoid but little of his features show. Wears a stitched-together coat made from the uniforms of different soldiers, and a stag-skull mask with a full set of antlers.",
+      "initiative": 10, "armor": 5,
+      "brawn": 3, "smarts": 6, "guts": 4,
+      "weapons": [{ "name": "Cudgel", "damage": 3 }],
+      "skills": [
+        { "name": "Melee", "rank": 2 },
+        { "name": "Knowledge", "rank": 4 },
+        { "name": "Elemental Rituals", "rank": 1, "notes": "Star" },
+        { "name": "Old Ways", "rank": 2, "notes": "Sickness, The Hart's Hooves" },
+        { "name": "Foreseen Doom (Smarts)", "rank": 2, "notes": "Gives a glimpse of your death; targets Guts and deals 2 damage." }
+      ],
+      "weakness": "Caledfwlch (the sword the Unit is questing for) deals 1 extra damage to Merlyn.",
+      "reward": "Draw 2 cards."
+    }
   ],
+  "adventure_notes": {
+    "The Belly of the Beast": "Introduces no new Antagonists — reuses core bestiary entries (Common Soldier, Average Human with an Investigation Specialty, etc.).",
+    "The Lamps Are Going Out": "Introduces Inquisitor, High Inquisitor, Minister, and The Night Master (all included above).",
+    "The Sword Quest": "Introduces Order of Camlann Initiate, Order of Camlann Knight, Nimue, and Merlyn (all included above)."
+  },
   "notes": [
     "Rot Breeder's weakness/reward text was cut off mid-extraction in the source PDF pull — worth double-checking pages ~79-80 of the book directly before publishing.",
     "Skin Thief's Initiative Value wasn't captured cleanly in extraction — verify against the book.",

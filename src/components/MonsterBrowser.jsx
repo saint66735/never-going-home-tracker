@@ -4,10 +4,15 @@ import { useCombat } from '../context/CombatContext'
 
 const CATEGORIES = ['All', 'Non-Supernatural', 'Supernatural']
 const TYPES = ['All', 'Solo', 'Mob']
+const BASE_SOURCE = 'Base'
 
 function parseNum(val) {
   const match = String(val ?? '').match(/-?\d+(\.\d+)?/)
   return match ? parseFloat(match[0]) : 0
+}
+
+function getSource(m) {
+  return m.adventure || BASE_SOURCE
 }
 
 function incompleteReason(name, notes) {
@@ -28,8 +33,15 @@ export default function MonsterBrowser({ onQuickAdd }) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('All')
   const [type, setType] = useState('All')
+  const [source, setSource] = useState('All')
 
   const globalNotes = bestiary.notes || []
+
+  const sources = useMemo(() => {
+    const found = new Set(bestiary.antagonists.map(getSource))
+    found.delete(BASE_SOURCE)
+    return ['All', BASE_SOURCE, ...Array.from(found).sort()]
+  }, [])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -39,9 +51,10 @@ export default function MonsterBrowser({ onQuickAdd }) {
         || (m.aliases || []).some((a) => a.toLowerCase().includes(q))
       const matchesCategory = category === 'All' || m.category === category
       const matchesType = type === 'All' || m.type === type
-      return matchesQuery && matchesCategory && matchesType
+      const matchesSource = source === 'All' || getSource(m) === source
+      return matchesQuery && matchesCategory && matchesType && matchesSource
     })
-  }, [query, category, type])
+  }, [query, category, type, source])
 
   const handleQuickAdd = (m) => {
     addCombatant({
@@ -75,6 +88,9 @@ export default function MonsterBrowser({ onQuickAdd }) {
         <select className="field" value={type} onChange={(e) => setType(e.target.value)}>
           {TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
         </select>
+        <select className="field" value={source} onChange={(e) => setSource(e.target.value)}>
+          {sources.map((s) => <option key={s} value={s}>{s === 'All' ? 'All Sources' : s}</option>)}
+        </select>
         <span className="result-count">{filtered.length} of {bestiary.antagonists.length}</span>
       </div>
 
@@ -98,7 +114,7 @@ export default function MonsterBrowser({ onQuickAdd }) {
               <div className="monster-badges">
                 <span className={`badge badge-${m.category === 'Supernatural' ? 'supernatural' : 'mundane'}`}>{m.category}</span>
                 <span className="badge">{m.type}</span>
-                {m.adventure && <span className="badge badge-adventure">{m.adventure}</span>}
+                <span className={`badge ${m.adventure ? 'badge-adventure' : 'badge-base'}`}>{getSource(m)}</span>
               </div>
 
               {m.flavor && <p className="monster-flavor">{m.flavor}</p>}
