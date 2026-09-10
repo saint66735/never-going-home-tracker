@@ -1,38 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <radialGradient id="lens" cx="38%" cy="35%" r="70%">
-      <stop offset="0%" stop-color="#f0c274"/>
-      <stop offset="55%" stop-color="#c98a3a"/>
-      <stop offset="100%" stop-color="#6b4a1e"/>
-    </radialGradient>
-    <linearGradient id="face" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#332821"/>
-      <stop offset="100%" stop-color="#1c1611"/>
-    </linearGradient>
-  </defs>
-
-  <rect x="0" y="0" width="64" height="64" fill="#12100c"/>
+  <rect x="0" y="0" width="64" height="64" fill="#d8cbb0"/>
 
   <!-- straps -->
-  <path d="M12 22 Q 6 30, 12 40" stroke="#332821" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M52 22 Q 58 30, 52 40" stroke="#332821" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M13 22 Q 5 30, 13 40" stroke="#1a140d" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M51 22 Q 59 30, 51 40" stroke="#1a140d" stroke-width="3.5" fill="none" stroke-linecap="round"/>
 
   <!-- mask body -->
-  <path d="M32 8
-           C 18 8, 12 17, 12 27
-           C 12 38, 17 48, 24 52
-           C 27 54, 37 54, 40 52
-           C 47 48, 52 38, 52 27
-           C 52 17, 46 8, 32 8 Z"
-        fill="url(#face)" stroke="#4a3c28" stroke-width="1.5"/>
+  <path d="M32 6
+           C 17 6, 11 16, 11 26
+           C 11 36, 15 45, 22 50
+           C 26 53, 38 53, 42 50
+           C 49 45, 53 36, 53 26
+           C 53 16, 47 6, 32 6 Z"
+        fill="#1a140d"/>
 
-  <!-- eye lenses -->
-  <circle cx="23.5" cy="26" r="8.5" fill="#0d0b08" stroke="#5a4a34" stroke-width="1.5"/>
-  <circle cx="23.5" cy="26" r="6" fill="url(#lens)"/>
-  <circle cx="40.5" cy="26" r="8.5" fill="#0d0b08" stroke="#5a4a34" stroke-width="1.5"/>
-  <circle cx="40.5" cy="26" r="6" fill="url(#lens)"/>
+  <!-- eye lenses (cutouts) -->
+  <circle cx="22.5" cy="24" r="8.5" fill="#d8cbb0"/>
+  <circle cx="22.5" cy="24" r="8.5" fill="none" stroke="#1a140d" stroke-width="2.5"/>
+  <circle cx="41.5" cy="24" r="8.5" fill="#d8cbb0"/>
+  <circle cx="41.5" cy="24" r="8.5" fill="none" stroke="#1a140d" stroke-width="2.5"/>
 
   <!-- filter canister -->
-  <rect x="24" y="38" width="16" height="16" rx="4" fill="#161210" stroke="#4a3c28" stroke-width="1.5"/>
-  <ellipse cx="32" cy="42.5" rx="5" ry="2" fill="none" stroke="#8a6a3a" stroke-width="1.2" opacity="0.7"/>
+  <circle cx="32" cy="45" r="12" fill="#1a140d"/>
+  <circle cx="32" cy="45" r="8" fill="none" stroke="#d8cbb0" stroke-width="2"/>
+  <circle cx="32" cy="45" r="3" fill="#d8cbb0"/>
 </svg>
