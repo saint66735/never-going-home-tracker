@@ -20,6 +20,10 @@ function track(max) {
   return { cur: n, max: n }
 }
 
+export function isCombatantDown(c) {
+  return c.brawn.cur <= 0 && c.smarts.cur <= 0 && c.guts.cur <= 0
+}
+
 export function CombatProvider({ children }) {
   const [state, setState] = useLocalStorage(STORAGE_KEY, emptyState)
 
@@ -34,6 +38,7 @@ export function CombatProvider({ children }) {
         guts: track(partial.guts),
         armor: partial.armor ?? 'None',
         initiative: partial.initiative ?? '',
+        acted: false,
       }
       return { ...prev, combatants: [...prev.combatants, combatant] }
     })
@@ -103,18 +108,20 @@ export function CombatProvider({ children }) {
     setState((prev) => ({ ...prev, currentTurnId: id }))
   }, [setState])
 
-  const nextTurn = useCallback(() => {
-    setState((prev) => {
-      if (prev.combatants.length === 0) return prev
-      const idx = prev.combatants.findIndex((c) => c.id === prev.currentTurnId)
-      const nextIdx = idx < 0 ? 0 : (idx + 1) % prev.combatants.length
-      const wrapped = idx >= 0 && nextIdx === 0
-      return {
-        ...prev,
-        currentTurnId: prev.combatants[nextIdx].id,
-        round: wrapped ? prev.round + 1 : prev.round,
-      }
-    })
+  const toggleActed = useCallback((id) => {
+    setState((prev) => ({
+      ...prev,
+      combatants: prev.combatants.map((c) => (c.id === id ? { ...c, acted: !c.acted } : c)),
+    }))
+  }, [setState])
+
+  const nextRound = useCallback(() => {
+    setState((prev) => ({
+      ...prev,
+      round: prev.round + 1,
+      currentTurnId: null,
+      combatants: prev.combatants.map((c) => ({ ...c, acted: false })),
+    }))
   }, [setState])
 
   const setRound = useCallback((round) => {
@@ -135,10 +142,11 @@ export function CombatProvider({ children }) {
     moveCombatant,
     sortByInitiative,
     setCurrentTurnId,
-    nextTurn,
+    toggleActed,
+    nextRound,
     setRound,
     resetCombat,
-  }), [state, addCombatant, removeCombatant, updateCombatant, adjustTrack, setTrackMax, moveCombatant, sortByInitiative, setCurrentTurnId, nextTurn, setRound, resetCombat])
+  }), [state, addCombatant, removeCombatant, updateCombatant, adjustTrack, setTrackMax, moveCombatant, sortByInitiative, setCurrentTurnId, toggleActed, nextRound, setRound, resetCombat])
 
   return <CombatContext.Provider value={value}>{children}</CombatContext.Provider>
 }

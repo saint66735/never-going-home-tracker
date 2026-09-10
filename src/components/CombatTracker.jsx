@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useCombat } from '../context/CombatContext'
+import { useMemo, useState } from 'react'
+import { useCombat, isCombatantDown } from '../context/CombatContext'
 
 const TRACKS = [
   { key: 'brawn', label: 'Brawn' },
@@ -31,12 +31,18 @@ export default function CombatTracker() {
     combatants, round, currentTurnId,
     addCombatant, removeCombatant, updateCombatant,
     adjustTrack, setTrackMax, moveCombatant,
-    sortByInitiative, setCurrentTurnId, nextTurn, setRound, resetCombat,
+    sortByInitiative, setCurrentTurnId, toggleActed, nextRound, setRound, resetCombat,
   } = useCombat()
 
   const [form, setForm] = useState({
     name: '', type: 'Enemy', brawn: 3, smarts: 3, guts: 3, armor: 'None', initiative: '',
   })
+
+  const pendingCount = useMemo(
+    () => combatants.filter((c) => !c.acted && !isCombatantDown(c)).length,
+    [combatants],
+  )
+  const canAdvanceRound = combatants.length > 0 && pendingCount === 0
 
   const handleAdd = (e) => {
     e.preventDefault()
@@ -59,7 +65,17 @@ export default function CombatTracker() {
           <button className="pip-btn" onClick={() => setRound(round - 1)}>−</button>
           <span className="round-value">{round}</span>
           <button className="pip-btn" onClick={() => setRound(round + 1)}>+</button>
-          <button className="btn btn-accent" onClick={nextTurn} disabled={combatants.length === 0}>Next Turn ▸</button>
+          <button
+            className="btn btn-accent"
+            onClick={nextRound}
+            disabled={!canAdvanceRound}
+            title={canAdvanceRound ? 'Everyone has acted — start the next round' : `${pendingCount} combatant${pendingCount === 1 ? '' : 's'} still need to act`}
+          >
+            Next Round ▸
+          </button>
+          {!canAdvanceRound && combatants.length > 0 && (
+            <span className="pending-note">{pendingCount} left to act</span>
+          )}
           <button className="btn" onClick={sortByInitiative} disabled={combatants.length < 2}>Sort by Initiative</button>
           <button
             className="btn btn-danger"
@@ -109,14 +125,17 @@ export default function CombatTracker() {
                 <th>Guts</th>
                 <th>Armor</th>
                 <th>Initiative</th>
+                <th>Acted</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {combatants.map((c, idx) => (
+              {combatants.map((c, idx) => {
+                const down = isCombatantDown(c)
+                return (
                 <tr
                   key={c.id}
-                  className={`combatant-row type-${c.type.toLowerCase()} ${currentTurnId === c.id ? 'is-current-turn' : ''}`}
+                  className={`combatant-row type-${c.type.toLowerCase()} ${currentTurnId === c.id ? 'is-current-turn' : ''} ${down ? 'is-down' : ''}`}
                 >
                   <td className="reorder-cell">
                     <button className="pip-btn tiny" onClick={() => moveCombatant(c.id, -1)} disabled={idx === 0} aria-label="move up">▲</button>
@@ -166,11 +185,22 @@ export default function CombatTracker() {
                       onChange={(e) => updateCombatant(c.id, { initiative: e.target.value })}
                     />
                   </td>
+                  <td className="acted-cell">
+                    <input
+                      type="checkbox"
+                      className="acted-checkbox"
+                      checked={c.acted || down}
+                      disabled={down}
+                      title={down ? 'Defeated — excluded from the round gate' : 'Mark as having acted this round'}
+                      onChange={() => toggleActed(c.id)}
+                    />
+                  </td>
                   <td>
                     <button className="btn btn-danger btn-small" onClick={() => removeCombatant(c.id)}>✕</button>
                   </td>
                 </tr>
-              ))}
+                )
+              })}
             </tbody>
           </table>
         </div>
