@@ -21,7 +21,7 @@ function track(max) {
 }
 
 export function isCombatantDown(c) {
-  return c.brawn.cur <= 0 && c.smarts.cur <= 0 && c.guts.cur <= 0
+  return c.brawn.cur <= 0 || c.smarts.cur <= 0 || c.guts.cur <= 0
 }
 
 export function CombatProvider({ children }) {

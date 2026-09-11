@@ -186,14 +186,17 @@ export default function CombatTracker() {
                     />
                   </td>
                   <td className="acted-cell">
-                    <input
-                      type="checkbox"
-                      className="acted-checkbox"
-                      checked={c.acted || down}
-                      disabled={down}
-                      title={down ? 'Defeated — excluded from the round gate' : 'Mark as having acted this round'}
-                      onChange={() => toggleActed(c.id)}
-                    />
+                    {down ? (
+                      <span className="down-skull" title="Defeated — excluded from the round gate">💀</span>
+                    ) : (
+                      <input
+                        type="checkbox"
+                        className="acted-checkbox"
+                        checked={c.acted}
+                        title="Mark as having acted this round"
+                        onChange={() => toggleActed(c.id)}
+                      />
+                    )}
                   </td>
                   <td>
                     <button className="btn btn-danger btn-small" onClick={() => removeCombatant(c.id)}>✕</button>
