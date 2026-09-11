@@ -9,6 +9,12 @@ device you use it on.
 - **Combat Tracker** — add/remove combatants, track Brawn/Smarts/Guts and
   Armor, free-text Initiative with manual reordering and sort, round counter,
   current-turn highlight.
+- **Character Creation** — build a soldier record following the game's
+  chargen rules: divide 10 points among Brawn/Smarts/Guts, pick 3 trained
+  skills and assign 3 Skill Dice among them, set up Whisper Paths and spells
+  if trained, and fill in equipment/service record/personal history. A
+  "Randomize" button rolls up a full NPC in one click. Saved characters can
+  be edited or quick-added straight into the Combat Tracker.
 - **Corruption Tracker** — per-PC 0–5 corruption track with notes and a
   blur/reveal toggle for narrator-only viewing.
 - **Bestiary** — every antagonist from `NGH_Bestiary.json`, searchable and

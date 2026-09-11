@@ -2,11 +2,13 @@ import { useState } from 'react'
 import './index.css'
 import { CombatProvider } from './context/CombatContext'
 import CombatTracker from './components/CombatTracker'
+import CharacterCreation from './components/CharacterCreation'
 import CorruptionTracker from './components/CorruptionTracker'
 import MonsterBrowser from './components/MonsterBrowser'
 
 const TABS = [
   { key: 'combat', label: 'Combat Tracker' },
+  { key: 'characters', label: 'Character Creation' },
   { key: 'corruption', label: 'Corruption' },
   { key: 'bestiary', label: 'Bestiary' },
 ]
@@ -36,6 +38,7 @@ function App() {
 
         <main className="app-main">
           {activeTab === 'combat' && <CombatTracker />}
+          {activeTab === 'characters' && <CharacterCreation />}
           {activeTab === 'corruption' && <CorruptionTracker />}
           {activeTab === 'bestiary' && <MonsterBrowser onQuickAdd={() => setActiveTab('combat')} />}
         </main>

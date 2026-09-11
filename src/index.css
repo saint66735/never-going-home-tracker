@@ -683,6 +683,175 @@ h1, h2, h3, h4 {
   align-self: flex-start;
 }
 
+/* Character creation */
+.chargen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.chargen-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chargen-col h3 {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.chargen-col h4 {
+  font-size: 0.85rem;
+  color: var(--color-accent-bright);
+  margin: 0.25rem 0;
+}
+
+.chargen-inline-fields {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chargen-inline-fields .field {
+  flex: 1;
+}
+
+.chargen-hint {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--color-text-faint);
+  margin: 0;
+}
+
+.chargen-remaining {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  margin: 0.15rem 0 0.5rem;
+}
+
+.chargen-remaining.warn {
+  color: var(--color-danger-bright);
+}
+
+.chargen-remaining.ok {
+  color: var(--color-pc-bright);
+}
+
+.chargen-save-row {
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.attribute-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.attribute-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.attribute-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.attribute-desc {
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+}
+
+.dice-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.skill-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.skill-label input[type='checkbox'] {
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+}
+
+.skill-attr {
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+}
+
+.skill-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+.whisper-block {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(95, 66, 112, 0.1);
+  border: 1px solid var(--color-supernatural);
+}
+
+.whisper-path-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.whisper-path-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.whisper-path-header .field-name {
+  flex: 1;
+}
+
+.whisper-spells {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .chargen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .app-shell {
     padding: 1rem 0.75rem 2rem;
